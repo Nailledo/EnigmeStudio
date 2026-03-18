@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">EnigmeStudio</string>
     <string name="label_acceleration">Acceleration</string>
+    <string name="enigme_studio">Enigme Studio</string>
+    <string name="parametre">⚙</string>
+    <string name="s_lection_de_niveaux">Sélection de niveaux</string>
 </resources>

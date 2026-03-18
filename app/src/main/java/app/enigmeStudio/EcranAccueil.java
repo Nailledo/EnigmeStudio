@@ -6,6 +6,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
 public class EcranAccueil extends AppCompatActivity
 {
 
@@ -24,7 +25,7 @@ public class EcranAccueil extends AppCompatActivity
 
     public void enigmeMontre(View view)
     {
-        Intent intentEnigmeMontre = new Intent(this, EnigmeMontre.class);
+        Intent intentEnigmeMontre = new Intent(this, app.enigmeStudio.EnigmeMontre.class);
         startActivity(intentEnigmeMontre);
     }
 }

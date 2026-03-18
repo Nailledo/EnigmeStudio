@@ -19,7 +19,7 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Enigme Studio"
+            android:text="@string/enigme_studio"
             android:textSize="35dp" />
 
         <Button
@@ -27,13 +27,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
+            android:text="@string/parametre"
             android:onClick="parametre"/>
     </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sélection de niveaux"
+        android:text="@string/s_lection_de_niveaux"
         android:textSize="20dp"
         android:layout_marginBottom="10dp" />
 

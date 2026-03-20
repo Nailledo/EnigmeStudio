@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EnigmeStudio">
         <activity
-            android:name=".EnigmeMontre"
+            android:name=".enigmeMontre.EnigmeMontre"
             android:exported="false" />
         <activity
             android:name=".Parametre"

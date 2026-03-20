@@ -2,17 +2,33 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:padding="16dp">
 
     <Button
-        android:layout_width="wrap_content"
+        android:id="@+id/btn_retour"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="revenir en arrière"/>
+        android:text="@string/revenir_en_arriere"
+        android:onClick="finish" />
 
     <Button
+        android:id="@+id/btn_reset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:onClick="reinitialiserProgression"
+        android:text="@string/reinitialiser_progression" />
+
+
+    <Spinner
+        android:id="@+id/sp_langues"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="réinitialiser la progression"/>
-
+        android:layout_marginTop="200dp"
+        android:layout_gravity="center"
+        android:entries="@array/languages"
+        android:minHeight="48dp" />
 
 </RelativeLayout>

@@ -3,5 +3,35 @@
     <string name="label_acceleration">Acceleration</string>
     <string name="enigme_studio">Enigme Studio</string>
     <string name="parametre">⚙</string>
-    <string name="s_lection_de_niveaux">Sélection de niveaux</string>
+    <string name="s_lection_de_niveaux">Sélectionner un niveau</string>
+    <string name="reussi">Réussi</string>
+    <string name="nonfait">non-fait</string>
+    <string name="revenir_en_arriere">revenir en arrière</string>
+    <string name="reinitialiser_progression">réinitialiser la progression</string>
+    <string name="choisir_la_langue">Choisir la langue</string>
+    <string name="E1_erreur">Ce n\'est pas la bonne heure…</string>
+    <string name="selectionner_langue">-- Sélectionner une langue --</string>
+
+    <!-- ENIGME 2 : Montre -->
+    <string name="bloquer_petite_aiguille">Bloquer la petite aiguille</string>
+    <string name="bloquer_grande_aiguille">Bloquer la grande aiguille</string>
+    <string name="indice_1_label">Indice 1</string>
+    <string name="indice_2_label">Indice 2</string>
+    <string name="indice_1_texte_1">Indice : Inclinez le téléphone sur les côtés pour les minutes,</string>
+    <string name="indice_1_texte_2">et d\'avant en arrière pour les heures.</string>
+    <string name="indice_2_texte">Indice : Quelle heure est-il ?</string>
+    <string name="heure_montre_format">Heure sur la montre : %1$02dh%2$02d</string>
+    <string name="etape_1_titre">Étape 1 : placez la petite aiguille (heures)</string>
+    <string name="etape_bloquer_info">Vous pouvez bloquer l\'aiguille avec le bouton ci-dessous</string>
+    <string name="etape_2_titre">Étape 2 : placez la grande aiguille (minutes)</string>
+    <string name="reussi_titre">Vous avez réussi !</string>
+    <string name="revenir_accueil_info">Vous pouvez revenir à l\'accueil.</string>
+
+    <string-array name="languages">
+        <item>@string/selectionner_langue</item>
+        <item>Français</item>
+        <item>English</item>
+        <item>Italiano</item>
+    </string-array>
+
 </resources>

@@ -1,91 +1,83 @@
 package app.enigmeStudio;
 
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.RectF;
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Parametre extends AppCompatActivity
+import java.util.Locale;
+
+import app.enigmeStudio.Outils.Sauvegarde;
+
+public class Parametre extends AppCompatActivity implements AdapterView.OnItemSelectedListener
 {
+    public final static int SELECT  = 0;
+    public final static int FRENCH  = 1;
+    public final static int ENGLISH = 2;
+    public final static int ITALIAN = 3;
+
+    private Spinner languageChooser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parametre);
+
+        languageChooser = findViewById(R.id.sp_langues);
+        languageChooser.setOnItemSelectedListener(this);
     }
 
-    // A RAJOUTER POUR UN BTN RETOUR
-    /***
-     * Attribut
-     *         private RectF zoneBoutonRetour = new RectF();
-     *
-     * Dans la méthode OnDraw()
-     *         zoneBoutonRetour.set(20, 100, 150, 175);
-     *
-     * Dans la méthode OnTouch
-     *          if (evenement.getAction() != MotionEvent.ACTION_DOWN) return false;
-     *
-     *          float touchX = evenement.getX();
-     *          float touchY = evenement.getY();
-     *
-     *          if ( zoneBoutonRetour.contains(touchX, touchY) )
-     *          {
-     *              finish();
-     *              return true;
-     *          }
-     */
-    public static void creerBtnRetour(Canvas canvas, Paint pinceau, RectF zone, String texte)
+    public void finish(View view)
     {
-        pinceau.setStyle(Paint.Style.FILL);
-        pinceau.setColor(Color.DKGRAY);
-        canvas.drawRoundRect(zone, 20, 20, pinceau);
-
-        pinceau.setStyle(Paint.Style.STROKE);
-        pinceau.setStrokeWidth(3f);
-        pinceau.setColor(Color.GRAY);
-        canvas.drawRoundRect(zone, 20, 20, pinceau);
-
-        pinceau.setStyle(Paint.Style.FILL);
-        pinceau.setColor(Color.LTGRAY);
-        pinceau.setTextSize(36f);
-        pinceau.setFakeBoldText(true);
-        canvas.drawText(texte,
-                zone.centerX() - pinceau.measureText(texte) / 2f,
-                zone.centerY() + 13f,
-                pinceau);
-
-        pinceau.setStyle(Paint.Style.FILL);
-        pinceau.setStrokeWidth(0f);
-        pinceau.setFakeBoldText(true);
+        this.finish();
     }
 
-    public static void creerBtnIndice(Canvas canvas, Paint pinceau, RectF zone, String texte)
+    public void reinitialiserProgression(View view)
     {
-        pinceau.setStyle(Paint.Style.FILL);
-        pinceau.setColor(Color.DKGRAY);
-        canvas.drawRoundRect(zone, 20, 20, pinceau);
-
-        pinceau.setStyle(Paint.Style.STROKE);
-        pinceau.setStrokeWidth(3f);
-        pinceau.setColor(Color.GRAY);
-        canvas.drawRoundRect(zone, 20, 20, pinceau);
-
-        pinceau.setStyle(Paint.Style.FILL);
-        pinceau.setColor(Color.LTGRAY);
-        pinceau.setTextSize(36f);
-        pinceau.setFakeBoldText(true);
-        canvas.drawText(texte,
-                zone.centerX() - pinceau.measureText(texte) / 2f,
-                zone.centerY() + 13f,
-                pinceau);
-
-        pinceau.setStyle(Paint.Style.FILL);
-        pinceau.setStrokeWidth(0f);
-        pinceau.setFakeBoldText(true);
+        this.finish();
     }
 
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+    {
+        if (position == SELECT)
+            return;
+
+        String langue       = "";
+        String sLangueToast = "";
+        switch (position)
+        {
+            case ENGLISH: langue = "en";  sLangueToast = "English" ; break;
+            case ITALIAN: langue = "it";  sLangueToast = "Italiano"; break;
+            case FRENCH : langue = "fr";  sLangueToast = "Français"; break;
+            default: return;
+        }
+
+        Locale newLocale = new Locale(langue);
+        String currentlangue = getResources().getConfiguration().locale.getLanguage();
+
+        if (!currentlangue.equals(langue))
+        {
+            Locale.setDefault(newLocale);
+
+            Configuration config = new Configuration();
+            config.setLocale(newLocale);
+
+            getResources().updateConfiguration(config, getResources().getDisplayMetrics());
+            getApplicationContext().getResources().updateConfiguration(config, getResources().getDisplayMetrics());
+
+            Sauvegarde.setLangue( langue );
+            recreate();
+
+            Toast.makeText(this, " -> " + sLangueToast, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {}
 }

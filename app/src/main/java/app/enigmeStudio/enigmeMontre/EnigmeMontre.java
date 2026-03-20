@@ -1,4 +1,4 @@
-package app.enigmeStudio;
+package app.enigmeStudio.enigmeMontre;
 
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -12,77 +12,75 @@ import java.util.Calendar;
 
 public class EnigmeMontre extends AppCompatActivity implements SensorEventListener
 {
-    private float[]       acceleration = new float[3];
-    private SensorManager gestionnaire;
+    private float[]        acceleration;
+    private SensorManager  gestionnaire;
     private DessinerMontre vue;
-    int                    heureCible;
-    int                    minuteCible;
+    private int            heureCible;
+    private int            minuteCible;
+    private float          normMinute;
+    private float          normHeure;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
+    protected void onCreate(Bundle bagOfData)
     {
-        super.onCreate(savedInstanceState);
+        super.onCreate(bagOfData);
 
+        this.acceleration = new float[3];
+
+        // Heure actuelle
         Calendar calendrier = Calendar.getInstance();
-        heureCible  = calendrier.get(Calendar.HOUR_OF_DAY) % 12;
-        minuteCible = calendrier.get(Calendar.MINUTE);
+        this.heureCible  = calendrier.get(Calendar.HOUR_OF_DAY) % 12;
+        this.minuteCible = calendrier.get(Calendar.MINUTE);
 
-        vue = new DessinerMontre(this);
-        setContentView(vue);
+        this.vue = new DessinerMontre(this);
+        setContentView(this.vue);
 
-        gestionnaire = (SensorManager) getSystemService(SENSOR_SERVICE);
+        this.gestionnaire = (SensorManager) getSystemService(SENSOR_SERVICE);
     }
 
     @Override
     protected void onResume()
     {
         super.onResume();
-        Sensor accelerometre = gestionnaire.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        Sensor accelerometre = this.gestionnaire.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         if (accelerometre != null)
-            gestionnaire.registerListener(this, accelerometre, SensorManager.SENSOR_DELAY_UI);
+            this.gestionnaire.registerListener(this, accelerometre, SensorManager.SENSOR_DELAY_UI);
     }
 
     @Override
     protected void onPause()
     {
         super.onPause();
-        gestionnaire.unregisterListener(this);
+        this.gestionnaire.unregisterListener(this);
     }
 
     @Override
     public void onSensorChanged(SensorEvent evenement)
     {
-        acceleration = evenement.values.clone();
-        vue.invalidate();
+        this.acceleration = evenement.values.clone();
+        this.vue.invalidate();
     }
 
     @Override
     public void onAccuracyChanged(Sensor capteur, int precision) {}
 
-    float[] getAcceleration() { return acceleration; }
+    public float[] getAcceleration   () { return this.acceleration; }
+    public int     getMinuteAiguille () { return (int)(this.normMinute / 6f); }
+    public int     getHeureAiguille  () { return (int)(this.normHeure / 0.5f / 60f) % 12; }
 
-    boolean estResolu()
+    public boolean estResolu()
     {
-        float normMinute = normaliserAngle(vue.angleGrandeVerrouille + 277.6f);
-        float normHeure  = normaliserAngle(vue.anglePetiteVerrouille - 66.3f);
+        this.normMinute = normaliserAngle(this.vue.getAngleGrandeVerrouille() + 277.6f);
+        this.normHeure  = normaliserAngle(this.vue.getAnglePetiteVerrouille() - 66.3f);
 
-        float cibleMinute = minuteCible * 6f;
-        float cibleHeure  = (heureCible * 60 + minuteCible) * 0.5f;
-
-        float minuteAiguille = normMinute / 6f;
-        float heureAiguille  = (normHeure / 0.5f / 60f) % 12;
-
-        System.out.println("Aiguille : " + (int)heureAiguille + "h" + (int)minuteAiguille);
-        System.out.println("Cible    : " + heureCible + "h" + minuteCible);
+        float cibleMinute = this.minuteCible * 6f;
+        float cibleHeure  = (this.heureCible * 60 + this.minuteCible) * 0.5f;
 
         return differenceAngulaire(normMinute, cibleMinute) <= 20f
-                && differenceAngulaire(normHeure, cibleHeure) <= 20f;
+                && differenceAngulaire(normHeure,  cibleHeure)  <= 20f;
     }
 
-    float normaliserAngle(float angle)
-    {
-        return (angle % 360 + 360) % 360;
-    }
+    private float normaliserAngle(float angle)  { return (angle % 360 + 360) % 360; }
 
     private float differenceAngulaire(float a, float b)
     {
@@ -90,7 +88,7 @@ public class EnigmeMontre extends AppCompatActivity implements SensorEventListen
         return Math.min(diff, 360 - diff);
     }
 
-    float axeVersAngle(float valeur)
+    public float axeVersAngle(float valeur)
     {
         float deg = valeur * 18f;
         return (deg + 360) % 360;

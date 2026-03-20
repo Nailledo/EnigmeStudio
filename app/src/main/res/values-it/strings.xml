@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">EnigmeStudio</string>
+    <string name="label_acceleration">Accelerazione</string>
+    <string name="enigme_studio">Enigma Studio</string>
+    <string name="parametre">⚙</string>
+    <string name="choisir_la_langue">Scegli una lingua</string>
+    <string name="s_lection_de_niveaux">Seleziona un livello</string>
+    <string name="reussi">Riuscito</string>
+    <string name="nonfait">Non completato</string>
+    <string name="revenir_en_arriere">Torna indietro</string>
+    <string name="reinitialiser_progression">Reimposta tutto il progresso</string>
+
+    <string name="selectionner_langue">-- Seleziona una lingua --</string>
+
+    <!-- Enigme 1 : Montre -->
+    <string name="E1_erreur">Non è l\'ora corretta…</string>
+    <string name="bloquer_petite_aiguille">Blocca la lancetta delle ore</string>
+    <string name="bloquer_grande_aiguille">Blocca la lancetta dei minuti</string>
+    <string name="indice_1_label">Indizio 1</string>
+    <string name="indice_2_label">Indizio 2</string>
+    <string name="indice_1_texte_1">Indizio: Inclina il telefono lateralmente per i minuti,</string>
+    <string name="indice_1_texte_2">e avanti e indietro per le ore.</string>
+    <string name="indice_2_texte">Indizio: Che ora è?</string>
+    <string name="heure_montre_format">Ora sull\'orologio: %1$02dh%2$02d</string>
+    <string name="etape_1_titre">Passaggio 1: posiziona la lancetta delle ore</string>
+    <string name="etape_bloquer_info">Puoi bloccare la lancetta con il pulsante qui sotto</string>
+    <string name="etape_2_titre">Passaggio 2: posiziona la lancetta dei minuti</string>
+    <string name="reussi_titre">Riuscito</string>
+    <string name="revenir_accueil_info">Puoi tornare alla home.</string>
+
+    <string-array name="languages">
+        <item>@string/selectionner_langue</item>
+        <item>Francese</item>
+        <item>Inglese</item>
+        <item>Italiano</item>
+    </string-array>
+
+</resources>

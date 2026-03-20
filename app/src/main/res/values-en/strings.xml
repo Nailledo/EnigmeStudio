@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">EnigmeStudio</string>
+    <string name="label_acceleration">Acceleration</string>
+    <string name="enigme_studio">Enigme Studio</string>
+    <string name="parametre">⚙</string>
+    <string name="choisir_la_langue">Choose a language</string>
+    <string name="s_lection_de_niveaux">Select a level</string>
+    <string name="reussi">Succeed</string>
+    <string name="nonfait">not done</string>
+    <string name="revenir_en_arriere">go back</string>
+    <string name="reinitialiser_progression">restart all progression</string>
+    <string name="selectionner_langue">-- Select a language --</string>
+
+    <!-- Enigme 1 : Montre -->
+    <string name="E1_erreur">That\'s not the right time…</string>
+    <string name="bloquer_petite_aiguille">Lock the hour hand</string>
+    <string name="bloquer_grande_aiguille">Lock the minute hand</string>
+    <string name="indice_1_label">Hint 1</string>
+    <string name="indice_2_label">Hint 2</string>
+    <string name="indice_1_texte_1">Hint: Tilt the phone sideways for minutes,</string>
+    <string name="indice_1_texte_2">and back and forth for hours.</string>
+    <string name="indice_2_texte">Hint: What time is it?</string>
+    <string name="heure_montre_format">Time on the watch: %1$02dh%2$02d</string>
+    <string name="etape_1_titre">Step 1: place the hour hand</string>
+    <string name="etape_bloquer_info">You can lock the hand with the button below</string>
+    <string name="etape_2_titre">Step 2: place the minute hand</string>
+    <string name="reussi_titre">You succeeded!</string>
+    <string name="revenir_accueil_info">You can return to the home screen.</string>
+
+    <string-array name="languages">
+        <item>@string/selectionner_langue</item>
+        <item>French</item>
+        <item>English</item>
+        <item>Italian</item>
+    </string-array>
+
+</resources>

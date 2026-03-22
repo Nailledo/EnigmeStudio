@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:paddingTop="10dip"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".enigmeMorse.EnigmeMorse">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <Button
+            android:id="@+id/retour"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="@string/Retour"
+            android:backgroundTint="@color/red"
+            android:layout_marginTop="20dp"
+            android:layout_alignParentLeft="true"
+            android:onClick="sortir"/>
+
+        <Button
+            android:id="@+id/btnIndice1"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/black"
+            android:onClick="afficherIndice1"
+            android:layout_alignParentRight="true"
+            android:text="@string/Indice1" />
+
+        <Button
+            android:id="@+id/btnIndice2"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/black"
+            android:onClick="afficherIndice2"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/btnIndice1"
+            android:enabled="false"
+            android:text="@string/Indice2" />
+
+        <Button
+            android:id="@+id/btnIndice3"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/black"
+            android:onClick="afficherIndice3"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/btnIndice2"
+            android:enabled="false"
+            android:text="@string/Indice3" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="@string/message1"
+        android:layout_marginTop="40dp"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/saisie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_margin="10dip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lancerVibration"
+        android:onClick="vibrer" />
+
+    <Button
+        android:id="@+id/valider"
+        android:layout_margin="10dip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/green"
+        android:text="@string/Valider"
+        android:textColor="@color/black"
+        android:onClick="valider" />
+
+    <ImageView
+        android:id="@+id/coche"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/coche"
+        android:visibility="gone"
+        android:scaleType="fitCenter"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:id="@+id/txtIndice1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="50dp"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/txtIndice2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textAlignment="center" />
+
+</LinearLayout>

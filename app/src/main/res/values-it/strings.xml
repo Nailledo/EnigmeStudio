@@ -3,17 +3,27 @@
     <string name="label_acceleration">Accelerazione</string>
     <string name="enigme_studio">Enigma Studio</string>
     <string name="parametre">⚙</string>
-    <string name="choisir_la_langue">Scegli una lingua</string>
     <string name="s_lection_de_niveaux">Seleziona un livello</string>
     <string name="reussi">Riuscito</string>
     <string name="nonfait">Non completato</string>
     <string name="revenir_en_arriere">Torna indietro</string>
-    <string name="reinitialiser_progression">Reimposta tutto il progresso</string>
-
+    <string name="reinitialiser_progression">Reimposta la progressione</string>
+    <string name="choisir_la_langue">Scegli la lingua</string>
+    <string name="E1_erreur">Non è l\'ora corretta…</string>
     <string name="selectionner_langue">-- Seleziona una lingua --</string>
 
-    <!-- Enigme 1 : Montre -->
-    <string name="E1_erreur">Non è l\'ora corretta…</string>
+    <!-- ENIGME 1 : Morse -->
+    <string name="message1">Qual è il messaggio?</string>
+    <string name="lancerVibration">Avvia le vibrazioni</string>
+    <string name="Valider">Convalida</string>
+    <string name="Retour">Indietro</string>
+    <string name="Indice1">Indizio 1</string>
+    <string name="Indice2">Indizio 2</string>
+    <string name="Indice3">Indizio 3</string>
+    <string name="affichageIndice1">Potrebbe essere un messaggio in codice.</string>
+    <string name="affichageIndice2">Pensa a un sistema di trasmissione ben noto.</string>
+
+    <!-- ENIGME 2 : Montre -->
     <string name="bloquer_petite_aiguille">Blocca la lancetta delle ore</string>
     <string name="bloquer_grande_aiguille">Blocca la lancetta dei minuti</string>
     <string name="indice_1_label">Indizio 1</string>
@@ -25,7 +35,7 @@
     <string name="etape_1_titre">Passaggio 1: posiziona la lancetta delle ore</string>
     <string name="etape_bloquer_info">Puoi bloccare la lancetta con il pulsante qui sotto</string>
     <string name="etape_2_titre">Passaggio 2: posiziona la lancetta dei minuti</string>
-    <string name="reussi_titre">Riuscito</string>
+    <string name="reussi_titre">Hai vinto!</string>
     <string name="revenir_accueil_info">Puoi tornare alla home.</string>
 
     <string-array name="languages">

@@ -3,16 +3,27 @@
     <string name="label_acceleration">Acceleration</string>
     <string name="enigme_studio">Enigme Studio</string>
     <string name="parametre">⚙</string>
-    <string name="choisir_la_langue">Choose a language</string>
     <string name="s_lection_de_niveaux">Select a level</string>
-    <string name="reussi">Succeed</string>
+    <string name="reussi">Success</string>
     <string name="nonfait">not done</string>
     <string name="revenir_en_arriere">go back</string>
-    <string name="reinitialiser_progression">restart all progression</string>
+    <string name="reinitialiser_progression">reset progression</string>
+    <string name="choisir_la_langue">Choose language</string>
+    <string name="E1_erreur">That\'s not the right time…</string>
     <string name="selectionner_langue">-- Select a language --</string>
 
-    <!-- Enigme 1 : Montre -->
-    <string name="E1_erreur">That\'s not the right time…</string>
+    <!-- ENIGME 1 : Morse -->
+    <string name="message1">What is the message?</string>
+    <string name="lancerVibration">Start vibrations</string>
+    <string name="Valider">Validate</string>
+    <string name="Retour">Back</string>
+    <string name="Indice1">Hint 1</string>
+    <string name="Indice2">Hint 2</string>
+    <string name="Indice3">Hint 3</string>
+    <string name="affichageIndice1">It might be a coded message.</string>
+    <string name="affichageIndice2">Think of a well-known transmission system.</string>
+
+    <!-- ENIGME 2 : Montre -->
     <string name="bloquer_petite_aiguille">Lock the hour hand</string>
     <string name="bloquer_grande_aiguille">Lock the minute hand</string>
     <string name="indice_1_label">Hint 1</string>

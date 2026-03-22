@@ -57,7 +57,8 @@
 
             android:backgroundTint="#FFFFFF"
             android:textStyle="bold"
-            android:layout_margin="5dp"/>
+            android:layout_margin="5dp"
+            android:onClick="enigmeMorse"/>
 
         <TextView
             android:id="@+id/textViewN1"
@@ -100,7 +101,8 @@
 
             android:backgroundTint="#FFFFFF"
             android:textStyle="bold"
-            android:layout_margin="5dp"/>
+            android:layout_margin="5dp"
+            android:onClick="enigmeChampMine"/>
 
         <TextView
             android:id="@+id/textViewN3"

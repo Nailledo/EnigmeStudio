@@ -10,7 +10,18 @@
     <string name="reinitialiser_progression">réinitialiser la progression</string>
     <string name="choisir_la_langue">Choisir la langue</string>
     <string name="E1_erreur">Ce n\'est pas la bonne heure…</string>
-    <string name="selectionner_langue">-- Sélectionner une langue --</string>
+    <string name="selectionner_langue">-- Sélectionner une langue --</string>$
+
+    <!-- ENIGME 1 : Morse -->
+    <string name="message1">Quel est le message ?</string>
+    <string name="lancerVibration">Lancer les vibrations</string>
+    <string name="Valider">Valider</string>
+    <string name="Retour">Retour</string>
+    <string name="Indice1">Indice 1</string>
+    <string name="Indice2">Indice 2</string>
+    <string name="Indice3">Indice 3</string>
+    <string name="affichageIndice1">C\'est peut-être un message codé.</string>
+    <string name="affichageIndice2">Pensez à un système de transmission bien connu.</string>
 
     <!-- ENIGME 2 : Montre -->
     <string name="bloquer_petite_aiguille">Bloquer la petite aiguille</string>

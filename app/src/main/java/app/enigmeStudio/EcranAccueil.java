@@ -7,7 +7,9 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import app.enigmeStudio.Outils.Sauvegarde;
+import app.enigmeStudio.enigmeChampMine.ChampsDeMines;
 import app.enigmeStudio.enigmeMontre.EnigmeMontre;
+import app.enigmeStudio.enigmeMorse.EnigmeMorse;
 
 public class EcranAccueil extends AppCompatActivity
 {
@@ -55,9 +57,21 @@ public class EcranAccueil extends AppCompatActivity
         startActivity(intentParametre);
     }
 
+    public void enigmeMorse(View view)
+    {
+        Intent intentEnigmeMorse = new Intent(this, EnigmeMorse.class);
+        startActivity(intentEnigmeMorse);
+    }
+
     public void enigmeMontre(View view)
     {
         Intent intentEnigmeMontre = new Intent(this, EnigmeMontre.class);
         startActivity(intentEnigmeMontre);
+    }
+
+    public void enigmeChampMine(View view)
+    {
+        Intent intentEnigmeChampMine = new Intent(this, ChampsDeMines.class);
+        startActivity(intentEnigmeChampMine);
     }
 }

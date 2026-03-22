@@ -17,7 +17,6 @@ import app.enigmeStudio.R;
 
 public class EnigmeMorse extends AppCompatActivity
 {
-
     TextView message;
 
     TextView indice1;
@@ -79,7 +78,7 @@ public class EnigmeMorse extends AppCompatActivity
 
     public void valider(View view)
     {
-        if(this.texte.getText().toString().equals("test") || this.texte.getText().toString().equals("TEST"))
+        if(this.texte.getText().toString().equals("test") | this.texte.getText().toString().equals("TEST"))
         {
             this.message.setText("Gagné");
             this.message.setTextColor(Color.GREEN);
@@ -92,8 +91,8 @@ public class EnigmeMorse extends AppCompatActivity
             this.btnIndice2.setEnabled(false);
             this.btnIndice3.setEnabled(false);
 
+            this.image.setVisibility(View.VISIBLE);
             this.image.setImageResource(R.drawable.coche);
-            //this.image.setVisibility(View.VISIBLE);
 
             //Fermer le clavier
             InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);

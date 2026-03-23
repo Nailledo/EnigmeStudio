@@ -1,5 +1,6 @@
 package app.enigmeStudio.enigmeChampMine;
 
+import app.enigmeStudio.Outils.Sauvegarde;
 
 import android.app.Activity;
 import android.content.Context;
@@ -42,12 +43,15 @@ public class ChampsMinesView extends View implements  View.OnTouchListener
 
 	private boolean enMouvement;
 	private Vibrator vibor;
+	private String txtIndice;
+
 
 
 	public ChampsMinesView(Context context)
 	{
 		super(context);
 		setFocusable(true);
+		this.txtIndice = context.getString(app.enigmeStudio.R.string.indice_mine);
 
 		this.vibor = (Vibrator)context.getSystemService(Context.VIBRATOR_SERVICE);
 
@@ -66,6 +70,7 @@ public class ChampsMinesView extends View implements  View.OnTouchListener
 		this.styleTexte.setColor(Color.WHITE);
 		this.styleTexte.setTextSize(45);
 		this.styleTexte.setTextAlign(Paint.Align.LEFT);
+
 
 		this.setOnTouchListener(this);
 	}
@@ -139,7 +144,7 @@ public class ChampsMinesView extends View implements  View.OnTouchListener
 		canva.drawCircle(this.arrive.getX(), this.arrive.getY(), this.arrive.getRayon(), this.styleArrive);
 
 		if (this.cptMort >= 2)
-			canva.drawText("Indice : Cherche la mine qui vibre", 10f, this.arrive.getY() + 85f, this.styleTexte);
+			canva.drawText(this.txtIndice, 10f, this.arrive.getY() + 85f, this.styleTexte);
 
 
 	}
@@ -200,7 +205,7 @@ public class ChampsMinesView extends View implements  View.OnTouchListener
 		for (Mine m : this.tabMines)
 		{
 			if (m.estTunnel())
-				if (m.contactJoueur(this.joueurX, this.joueurY, this.rayonJ, 35))
+				if (m.contactJoueur(this.joueurX, this.joueurY, this.rayonJ, 42))
 				{
 					vibor.vibrate(20);
 					return;
@@ -227,7 +232,8 @@ public class ChampsMinesView extends View implements  View.OnTouchListener
 			}
 			else
 			{
-
+				Sauvegarde.setEnigme3Reussi(true);
+				((Activity) getContext()).finish();
 			}
 
 		}

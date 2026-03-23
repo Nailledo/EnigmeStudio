@@ -38,6 +38,9 @@
     <string name="reussi_titre">You succeeded!</string>
     <string name="revenir_accueil_info">You can return to the home screen.</string>
 
+    <!-- ENIGME 3 : ChampDeMine -->
+    <string name="indice_mine">Hint: Look for the vibrating mine</string>
+
     <string-array name="languages">
         <item>@string/selectionner_langue</item>
         <item>French</item>

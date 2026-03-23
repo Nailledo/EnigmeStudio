@@ -38,6 +38,9 @@
     <string name="reussi_titre">Hai vinto!</string>
     <string name="revenir_accueil_info">Puoi tornare alla home.</string>
 
+    <!-- ENIGME 3 : ChampDeMine -->
+    <string name="indice_mine">Indizio: Cerca la mina che vibra</string>
+
     <string-array name="languages">
         <item>@string/selectionner_langue</item>
         <item>Francese</item>

@@ -1,5 +1,5 @@
 package app.enigmeStudio;
-
+import android.net.Uri;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -54,7 +54,13 @@ public class EcranAccueil extends AppCompatActivity
         }
 
         new Sauvegarde().majTextView(this);
+
+        if (Sauvegarde.isEnigme1Reussi() && Sauvegarde.isEnigme2Reussi() && Sauvegarde.isEnigme3Reussi())
+        {
+            victoireFinale();
+        }
     }
+
 
     @Override
     protected void onSaveInstanceState(Bundle bagOfData)
@@ -87,5 +93,12 @@ public class EcranAccueil extends AppCompatActivity
     {
         Intent intentEnigmeChampMine = new Intent(this, ChampsDeMines.class);
         startActivity(intentEnigmeChampMine);
+    }
+
+    public void victoireFinale()
+    {
+        String urlVictoire = "https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1";
+        Intent intentWeb = new Intent(Intent.ACTION_VIEW, Uri.parse(urlVictoire));
+        startActivity(intentWeb);
     }
 }

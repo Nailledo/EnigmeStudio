@@ -38,6 +38,9 @@
     <string name="reussi_titre">Vous avez réussi !</string>
     <string name="revenir_accueil_info">Vous pouvez revenir à l\'accueil.</string>
 
+    <!-- ENIGME 3 : ChampDeMine -->
+    <string name="indice_mine">Indice : Cherche la mine qui vibre</string>
+
     <string-array name="languages">
         <item>@string/selectionner_langue</item>
         <item>Français</item>

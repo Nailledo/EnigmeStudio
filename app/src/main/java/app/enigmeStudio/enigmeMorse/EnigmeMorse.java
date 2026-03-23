@@ -62,7 +62,8 @@ public class EnigmeMorse extends AppCompatActivity
         this.vibreur.cancel();
     }
 
-    public void vibrer(View view) {
+    public void vibrer(View view)
+    {
         //Vibrator vibreur = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
 
         long[] pattern = {0,2000,1500,200,1500,200,50,200,50,200,1500,2000};
@@ -82,7 +83,9 @@ public class EnigmeMorse extends AppCompatActivity
 
     public void valider(View view)
     {
-        if(this.texte.getText().toString().equals("test") | this.texte.getText().toString().equals("TEST"))
+        String texteSaisi = this.texte.getText().toString().toUpperCase();
+
+        if ( texteSaisi .equals("TEST") )
         {
             this.message.setText("Gagné");
             this.message.setTextColor(Color.GREEN);

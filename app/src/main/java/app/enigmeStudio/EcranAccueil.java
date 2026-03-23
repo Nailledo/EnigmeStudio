@@ -40,7 +40,6 @@ public class EcranAccueil extends AppCompatActivity
 
         if (!langueActuelle.equals(langueSauvegardee))
         {
-            // Appliquer la langue sauvegardée avant de recréer l'écran
             Locale newLocale = new Locale(langueSauvegardee);
             Locale.setDefault(newLocale);
             Configuration config = new Configuration();
@@ -60,7 +59,6 @@ public class EcranAccueil extends AppCompatActivity
             victoireFinale();
         }
     }
-
 
     @Override
     protected void onSaveInstanceState(Bundle bagOfData)

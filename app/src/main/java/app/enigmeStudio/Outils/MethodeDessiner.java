@@ -58,26 +58,6 @@ public class MethodeDessiner
         canvas.restore();
     }
 
-    // A RAJOUTER POUR UN BTN RETOUR
-    /***
-     * Attribut
-     *         private RectF zoneBoutonRetour = new RectF();
-     *
-     * Dans la méthode OnDraw()
-     *         zoneBoutonRetour.set(20, 100, 150, 175);
-     *
-     * Dans la méthode OnTouch
-     *          if (evenement.getAction() != MotionEvent.ACTION_DOWN) return false;
-     *
-     *          float touchX = evenement.getX();
-     *          float touchY = evenement.getY();
-     *
-     *          if ( zoneBoutonRetour.contains(touchX, touchY) )
-     *          {
-     *              finish();
-     *              return true;
-     *          }
-     */
     public static void creerBtnRetour(Canvas canvas, RectF zone, String texte)
     {
         Paint pinceau = new Paint(Paint.ANTI_ALIAS_FLAG);

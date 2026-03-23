@@ -29,8 +29,6 @@ public class ChampsMinesView extends View implements  View.OnTouchListener
 	private Paint styleJoueur = new Paint();
 	private Paint styleArrive = new Paint();
 	private Paint styleTexte = new Paint();
-	private Paint styleTest = new Paint();  // a enlever
-
 	private ArrayList<Mine> tabMines;
 
 	private int cptNiveau = 1;
@@ -63,9 +61,6 @@ public class ChampsMinesView extends View implements  View.OnTouchListener
 
 		this.styleJoueur.setColor(Color.BLUE);
 		this.styleJoueur.setStyle(Paint.Style.FILL);
-
-		this.styleTest.setColor(Color.MAGENTA);    // a enlever
-		this.styleTest.setStyle(Paint.Style.FILL);  // a enlever
 
 		this.styleTexte.setColor(Color.WHITE);
 		this.styleTexte.setTextSize(45);
@@ -136,9 +131,6 @@ public class ChampsMinesView extends View implements  View.OnTouchListener
 
 
 		for (Mine m : this.tabMines)
-			if (m.estTunnel())							// a enlever
-				canva.drawCircle(m.getX(), m.getY(), m.getRayon(), this.styleTest); // a enlever
-			else
 				canva.drawCircle(m.getX(), m.getY(), m.getRayon(), this.styleMines);
 
 		canva.drawCircle(this.arrive.getX(), this.arrive.getY(), this.arrive.getRayon(), this.styleArrive);

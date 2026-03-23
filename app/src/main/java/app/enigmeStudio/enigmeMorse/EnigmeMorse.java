@@ -102,7 +102,7 @@ public class EnigmeMorse extends AppCompatActivity
             InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(this.texte.getWindowToken(), 0);
 
-            Sauvegarde.setEnigme3Reussi(true);
+            Sauvegarde.setEnigme1Reussi(true);
 
         }
     }

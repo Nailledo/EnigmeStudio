@@ -1,5 +1,8 @@
 package app.enigmeStudio.enigmeMorse;
 
+
+
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -13,6 +16,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import app.enigmeStudio.Outils.Sauvegarde;
 import app.enigmeStudio.R;
 
 public class EnigmeMorse extends AppCompatActivity
@@ -97,6 +101,9 @@ public class EnigmeMorse extends AppCompatActivity
             //Fermer le clavier
             InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(this.texte.getWindowToken(), 0);
+
+            Sauvegarde.setEnigme3Reussi(true);
+
         }
     }
 

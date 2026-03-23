@@ -1,15 +1,19 @@
 package app.enigmeStudio.enigmeChampMine;
 
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.RectF;
 import android.view.MotionEvent;
 import android.view.View;
 
 import java.util.ArrayList;
 import android.os.Vibrator ;
+
+import app.enigmeStudio.Outils.MethodeDessiner;
 
 public class ChampsMinesView extends View implements  View.OnTouchListener
 {
@@ -17,6 +21,9 @@ public class ChampsMinesView extends View implements  View.OnTouchListener
 	private float posDepartJX;
 	private float posDepartJY;
 	private int rayonJ;
+
+    private RectF zoneBoutonRetour = new RectF();
+
 	private Paint styleMines = new Paint();
 	private Paint styleJoueur = new Paint();
 	private Paint styleArrive = new Paint();
@@ -84,9 +91,13 @@ public class ChampsMinesView extends View implements  View.OnTouchListener
 
 	public void onDraw(Canvas canva)
 	{
-		super.onDraw(canva);
+        super.onDraw(canva);
 
-		canva.drawColor(Color.BLACK);
+        canva.drawColor(Color.BLACK);
+
+        zoneBoutonRetour.set(20, 100, 150, 175);
+        MethodeDessiner.creerBtnRetour(canva, this.zoneBoutonRetour, "<");
+
 
 		if(this.enMouvement)
 		{
@@ -141,16 +152,25 @@ public class ChampsMinesView extends View implements  View.OnTouchListener
 		{
 			this.cibleX =  motionEvent.getX();
 			this.cibleY =  motionEvent.getY();
+
+            if ( zoneBoutonRetour.contains(cibleX, cibleY) )
+            {
+                ((Activity)getContext()).finish();
+                return true;
+            }
+
 			this.enMouvement = true;
 
-			this.invalidate();
 
+
+			this.invalidate();
 			return true;
 		}
+
 		return false;
 	}
 
-	public void contactMine()
+    public void contactMine()
 	{
 		for (Mine m : this.tabMines)
 		{

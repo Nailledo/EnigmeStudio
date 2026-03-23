@@ -10,7 +10,7 @@ import app.enigmeStudio.enigmeMontre.DessinerMontre;
 
 public class MethodeDessiner
 {
-    private final Paint          pinceau;
+    private final Paint  pinceau;
 
     public MethodeDessiner(DessinerMontre vue, Paint pinceau)
     {
@@ -78,8 +78,10 @@ public class MethodeDessiner
      *              return true;
      *          }
      */
-    public static void creerBtnRetour(Canvas canvas, Paint pinceau, RectF zone, String texte)
+    public static void creerBtnRetour(Canvas canvas, RectF zone, String texte)
     {
+        Paint pinceau = new Paint(Paint.ANTI_ALIAS_FLAG);
+
         pinceau.setStyle(Paint.Style.FILL);
         pinceau.setColor(Color.DKGRAY);
         canvas.drawRoundRect(zone, 20, 20, pinceau);

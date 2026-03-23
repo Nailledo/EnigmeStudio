@@ -131,7 +131,7 @@ public class DessinerMontre extends View implements View.OnTouchListener
         this.dessinerInfo(canvas );
         dessinerBoutons(canvas);
 
-        MethodeDessiner.creerBtnRetour(canvas, this.pinceau, this.zoneBoutonRetour, "<");
+        MethodeDessiner.creerBtnRetour(canvas, this.zoneBoutonRetour, "<");
 
         if (this.montre == null) return;
 

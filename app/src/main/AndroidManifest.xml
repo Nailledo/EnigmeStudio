@@ -14,7 +14,8 @@
         android:theme="@style/Theme.EnigmeStudio">
         <activity
             android:name=".enigmeChampMine.ChampsDeMines"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".enigmeMorse.EnigmeMorse"
             android:exported="false" />

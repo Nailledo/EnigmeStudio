@@ -12,6 +12,7 @@ public class ChampsDeMines extends Activity
     {
         super.onCreate(savedInstanceState);
         this.champsMines = new ChampsMinesView(this);
+
         setContentView(this.champsMines);
 
     }

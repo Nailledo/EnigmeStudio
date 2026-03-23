@@ -64,7 +64,7 @@ public class ChampsMinesView extends View implements  View.OnTouchListener
 		this.styleTest.setStyle(Paint.Style.FILL);  // a enlever
 
 		this.styleTexte.setColor(Color.WHITE);
-		this.styleTexte.setTextSize(55f); // Taille de la police
+		this.styleTexte.setTextSize(45);
 		this.styleTexte.setTextAlign(Paint.Align.LEFT);
 
 		this.setOnTouchListener(this);
@@ -76,10 +76,10 @@ public class ChampsMinesView extends View implements  View.OnTouchListener
 
 		this.tabMines = GenererTabMines.generer(w, h, this.cptNiveau);
 
-		this.arrive = new Arrive(w/2, 130,40);
+		this.arrive = new Arrive(w/2f, h*0.08f,40);
 
-		this.posDepartJX = w/2;
-		this.posDepartJY = h- 130;
+		this.posDepartJX = w/2f;
+		this.posDepartJY = h*0.94f;
 		this.rayonJ = 20;
 
 		this.joueurX = this.posDepartJX;
@@ -139,7 +139,7 @@ public class ChampsMinesView extends View implements  View.OnTouchListener
 		canva.drawCircle(this.arrive.getX(), this.arrive.getY(), this.arrive.getRayon(), this.styleArrive);
 
 		if (this.cptMort >= 2)
-			canva.drawText("Indice : Cherche la mine qui vibre", 0f, 250f, this.styleTexte);
+			canva.drawText("Indice : Cherche la mine qui vibre", 10f, this.arrive.getY() + 85f, this.styleTexte);
 
 
 	}
@@ -158,10 +158,7 @@ public class ChampsMinesView extends View implements  View.OnTouchListener
                 ((Activity)getContext()).finish();
                 return true;
             }
-
 			this.enMouvement = true;
-
-
 
 			this.invalidate();
 			return true;
@@ -178,8 +175,8 @@ public class ChampsMinesView extends View implements  View.OnTouchListener
 			{
 				if (m.estTunnel())
 				{
-					this.joueurX = this.arrive.getX() * 2 - 80;
-					this.joueurY = this.arrive.getY() + 100;
+					this.joueurX = this.arrive.getX() * 1.8f;
+					this.joueurY = this.arrive.getY();
 
 				}
 				else
@@ -205,7 +202,6 @@ public class ChampsMinesView extends View implements  View.OnTouchListener
 			if (m.estTunnel())
 				if (m.contactJoueur(this.joueurX, this.joueurY, this.rayonJ, 35))
 				{
-					System.out.println("brrrrrrrrrrbrrrbbrbrbbrbrbrbbrbr"); // a enlevé
 					vibor.vibrate(20);
 					return;
 				}
@@ -229,8 +225,9 @@ public class ChampsMinesView extends View implements  View.OnTouchListener
 				this.enMouvement = false;
 				this.cptMort = 0;
 			}
-			else{
-				//jsp quoi faire
+			else
+			{
+
 			}
 
 		}

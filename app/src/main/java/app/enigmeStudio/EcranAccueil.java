@@ -1,10 +1,13 @@
 package app.enigmeStudio;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.Locale;
 
 import app.enigmeStudio.Outils.Sauvegarde;
 import app.enigmeStudio.enigmeChampMine.ChampsDeMines;
@@ -33,8 +36,19 @@ public class EcranAccueil extends AppCompatActivity
         super.onResume();
 
         String langueActuelle = getResources().getConfiguration().locale.getLanguage();
-        if (!langueActuelle.equals(Sauvegarde.getLangue()))
+        String langueSauvegardee = Sauvegarde.getLangue();
+
+        if (!langueActuelle.equals(langueSauvegardee))
         {
+            // Appliquer la langue sauvegardée avant de recréer l'écran
+            Locale newLocale = new Locale(langueSauvegardee);
+            Locale.setDefault(newLocale);
+            Configuration config = new Configuration();
+            config.setLocale(newLocale);
+            
+            getResources().updateConfiguration(config, getResources().getDisplayMetrics());
+            getApplicationContext().getResources().updateConfiguration(config, getResources().getDisplayMetrics());
+
             recreate();
             return;
         }

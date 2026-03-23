@@ -91,18 +91,18 @@ public class GenererTabMines
             listeMines.add(new Mine(largeurEcran * 0.6f, hauteurEcran * 0.35f, rayonStandard));
             listeMines.add(new Mine(largeurEcran * 0.8f, hauteurEcran * 0.35f, rayonStandard));
 
-            listeMines.add(new Mine(largeurEcran * 0.3f, hauteurEcran * 0.48f, rayonStandard));
+            listeMines.add(new Mine(largeurEcran * 0.3f, hauteurEcran * 0.48f, rayonStandardPlus));
             listeMines.add(new Mine(largeurEcran * 0.5f, hauteurEcran * 0.48f, rayonStandard));
-            listeMines.add(new Mine(largeurEcran * 0.7f, hauteurEcran * 0.48f, rayonStandard));
+            listeMines.add(new Mine(largeurEcran * 0.7f, hauteurEcran * 0.48f, rayonStandardPlus));
 
             listeMines.add(new Mine(largeurEcran * 0.4f, hauteurEcran * 0.61f, rayonStandard));
             listeMines.add(new Mine(largeurEcran * 0.6f, hauteurEcran * 0.61f, rayonStandard));
 
             listeMines.add(new Mine(largeurEcran * 0.5f, hauteurEcran * 0.74f, rayonStandard));
 
-            listeMines.add(new Mine(largeurEcran * 0.25f, hauteurEcran * 0.88f, rayonStandard));
-            listeMines.add(new Mine(largeurEcran * 0.75f, hauteurEcran * 0.88f, rayonStandard));
-            listeMines.add(new Mine(largeurEcran * 0.5f, hauteurEcran * 0.88f, rayonStandard));
+            listeMines.add(new Mine(largeurEcran * 0.25f, hauteurEcran * 0.86f, rayonStandard));
+            listeMines.add(new Mine(largeurEcran * 0.75f, hauteurEcran * 0.86f, rayonStandard));
+            listeMines.add(new Mine(largeurEcran * 0.5f, hauteurEcran * 0.86f, rayonStandard));
 
             listeMines.add(new Mine(largeurEcran * 0.05f, hauteurEcran * 0.35f, rayonStandard));
             listeMines.add(new Mine(largeurEcran * 0.95f, hauteurEcran * 0.35f, rayonStandard));

@@ -18,16 +18,20 @@
             android:screenOrientation="portrait"/>
         <activity
             android:name=".enigmeMorse.EnigmeMorse"
-            android:exported="false" />
+            android:exported="false" 
+	        android:screenOrientation="portrait"/>
         <activity
             android:name=".enigmeMontre.EnigmeMontre"
-            android:exported="false" />
+            android:exported="false" 
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Parametre"
-            android:exported="false" />
+            android:exported="false" 
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".EcranAccueil"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

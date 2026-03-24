@@ -79,7 +79,7 @@ public class EnigmeMontre extends AppCompatActivity implements SensorEventListen
         float cibleHeure  = (this.heureCible * 60 + this.minuteCible) * 0.5f;
 
         return differenceAngulaire(normMinute, cibleMinute) <= 20f
-                && differenceAngulaire(normHeure,  cibleHeure)  <= 20f;
+               && differenceAngulaire(normHeure,  cibleHeure)  <= 20f;
     }
 
     private float normaliserAngle(float angle)  { return (angle % 360 + 360) % 360; }

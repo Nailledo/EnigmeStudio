@@ -71,11 +71,11 @@ public class DessinerMontre extends View implements View.OnTouchListener
 
     private RectF calculerZoneMontre(int largeur, int hauteur)
     {
-        float echelle = ((float) largeur / this.montre.getWidth()) * 0.60f;
+        float echelle  = ((float) largeur / this.montre.getWidth()) * 0.60f;
         float mLargeur = this.montre.getWidth() * echelle;
         float mHauteur = this.montre.getHeight() * echelle;
-        float gauche = (largeur - mLargeur) / 2f;
-        float haut = (hauteur - mHauteur) * 0.45f;
+        float gauche   = (largeur - mLargeur) / 2f;
+        float haut     = (hauteur - mHauteur) * 0.45f;
         return new RectF(gauche, haut, gauche + mLargeur, haut + mHauteur);
     }
 

@@ -46,9 +46,7 @@ public class EcranAccueil extends AppCompatActivity
         new Sauvegarde().majTextView(this);
 
         if (Sauvegarde.isEnigme1Reussi() && Sauvegarde.isEnigme2Reussi() && Sauvegarde.isEnigme3Reussi())
-        {
             victoireFinale();
-        }
     }
 
     @Override

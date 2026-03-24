@@ -1,5 +1,6 @@
 package app.enigmeStudio.enigmeMontre;
 
+import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -33,6 +34,7 @@ public class EnigmeMontre extends AppCompatActivity implements SensorEventListen
         this.minuteCible = calendrier.get(Calendar.MINUTE);
 
         this.vue = new DessinerMontre(this);
+        this.vue.setBackgroundColor(Color.BLACK);
         setContentView(this.vue);
 
         this.gestionnaire = (SensorManager) getSystemService(SENSOR_SERVICE);

@@ -21,7 +21,6 @@
         android:onClick="reinitialiserProgression"
         android:text="@string/reinitialiser_progression" />
 
-
     <Spinner
         android:id="@+id/sp_langues"
         android:layout_width="wrap_content"

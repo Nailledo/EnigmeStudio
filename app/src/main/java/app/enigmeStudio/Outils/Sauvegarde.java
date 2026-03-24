@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.widget.TextView;
 
+import java.util.Locale;
+
 import app.enigmeStudio.R;
 
 public class Sauvegarde
@@ -44,6 +46,13 @@ public class Sauvegarde
     public static boolean isEnigme2Reussi()                { return enigme2Reussi; }
     public static boolean isEnigme3Reussi()                { return enigme3Reussi; }
 
-    public static void   setLangue(String l) { langue = l;      }
-    public static String getLangue()         { return langue;   }
+    public static void   setLangue(String l) { langue = l;                  }
+    public static Locale getLangue()         { return new Locale(langue);   }
+
+    public static void reinitialiserProgression()
+    {
+        enigme1Reussi = false;
+        enigme2Reussi = false;
+        enigme3Reussi = false;
+    }
 }

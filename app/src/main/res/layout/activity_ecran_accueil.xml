@@ -36,9 +36,10 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/textViewSelection"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/s_lection_de_niveaux"
+        android:text="@string/selectionner_un_niveau"
         android:textColor="@color/darkBleu"
         android:textSize="20sp"
         android:layout_marginTop="70dp" />

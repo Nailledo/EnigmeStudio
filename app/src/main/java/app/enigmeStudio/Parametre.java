@@ -4,6 +4,7 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -13,7 +14,7 @@ import java.util.Locale;
 
 import app.enigmeStudio.Outils.Sauvegarde;
 
-public class Parametre extends AppCompatActivity implements AdapterView.OnItemSelectedListener
+public class Parametre extends AppCompatActivity implements OnItemSelectedListener
 {
     public final static int SELECT  = 0;
     public final static int FRENCH  = 1;
@@ -39,6 +40,7 @@ public class Parametre extends AppCompatActivity implements AdapterView.OnItemSe
 
     public void reinitialiserProgression(View view)
     {
+        Sauvegarde.reinitialiserProgression();
         this.finish();
     }
 
@@ -69,10 +71,10 @@ public class Parametre extends AppCompatActivity implements AdapterView.OnItemSe
             config.setLocale(newLocale);
 
             getResources().updateConfiguration(config, getResources().getDisplayMetrics());
-            getApplicationContext().getResources().updateConfiguration(config, getResources().getDisplayMetrics());
+            this.getApplicationContext().getResources().updateConfiguration(config, getResources().getDisplayMetrics());
 
             Sauvegarde.setLangue( langue );
-            recreate();
+            this.recreate();
 
             Toast.makeText(this, " -> " + sLangueToast, Toast.LENGTH_SHORT).show();
         }

@@ -123,7 +123,7 @@ public class DessinerMontre extends View implements View.OnTouchListener
 
         this.dessinerInfo   (canvas);
         this.dessinerBoutons(canvas);
-        MethodeDessiner.creerBtnRetour(canvas, zoneBoutonRetour, "<");
+        MethodeDessiner.creerBtnRetour(canvas, zoneBoutonRetour, context.getString( R.string.Retour ) );
 
         if (montre != null)
         {
@@ -173,8 +173,8 @@ public class DessinerMontre extends View implements View.OnTouchListener
         {
             pinceau.setColor(Color.WHITE);
             pinceau.setTextSize(tSous);
-            canvas.drawText("Utilisez l'inclinaison pour régler l'heure.", xCentre, yTexteBas - tSous, pinceau);
-            canvas.drawText("Puis bloquez-la avec le bouton ci-dessous.", xCentre, yTexteBas, pinceau);
+            canvas.drawText(this.context.getString(R.string.txt_explication1), xCentre, yTexteBas - tSous, pinceau);
+            canvas.drawText(this.context.getString(R.string.txt_explication2), xCentre, yTexteBas, pinceau);
 
             pinceau.setTextSize(tTitre);
             String titre = (etape == 0) ? context.getString(R.string.etape_1_titre) : context.getString(R.string.etape_2_titre);
@@ -208,7 +208,7 @@ public class DessinerMontre extends View implements View.OnTouchListener
 
             pinceau.setColor(Color.WHITE);
             pinceau.setTextSize(tSous);
-            String h = activite.getHeureAiguille() + ":" + String.format("%02d", activite.getMinuteAiguille());
+            String h = activite.getHeureAiguille() + "h" + String.format("%02d", activite.getMinuteAiguille())+ "min";
             canvas.drawText(h, xCentre, yTexteBas + (tSous * 0.5f), pinceau);
 
             if (!enAttente)

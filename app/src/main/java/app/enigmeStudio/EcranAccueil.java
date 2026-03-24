@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -35,22 +36,15 @@ public class EcranAccueil extends AppCompatActivity
     {
         super.onResume();
 
-        String langueActuelle = getResources().getConfiguration().locale.getLanguage();
-        String langueSauvegardee = Sauvegarde.getLangue();
+        TextView txtSelection = (TextView) findViewById(R.id.textViewSelection);
+        if (txtSelection != null)
+            txtSelection.setText(R.string.selectionner_un_niveau);
 
-        if (!langueActuelle.equals(langueSauvegardee))
-        {
-            Locale newLocale = new Locale(langueSauvegardee);
-            Locale.setDefault(newLocale);
-            Configuration config = new Configuration();
-            config.setLocale(newLocale);
-            
-            getResources().updateConfiguration(config, getResources().getDisplayMetrics());
-            getApplicationContext().getResources().updateConfiguration(config, getResources().getDisplayMetrics());
+        Configuration config = new Configuration();
+        config.setLocale( Sauvegarde.getLangue() );
 
-            recreate();
-            return;
-        }
+        getResources().updateConfiguration(config, getResources().getDisplayMetrics());
+        this.getApplicationContext().getResources().updateConfiguration(config, getResources().getDisplayMetrics());
 
         new Sauvegarde().majTextView(this);
 
@@ -59,6 +53,14 @@ public class EcranAccueil extends AppCompatActivity
             victoireFinale();
         }
     }
+
+    @Override
+    protected void onRestart()
+    {
+        super.onRestart();
+        this.onResume();
+    }
+
 
     @Override
     protected void onSaveInstanceState(Bundle bagOfData)

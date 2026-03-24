@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import android.os.Vibrator ;
 
 import app.enigmeStudio.Outils.MethodeDessiner;
+import app.enigmeStudio.R;
 
 public class ChampsMinesView extends View implements  View.OnTouchListener
 {
@@ -42,6 +43,7 @@ public class ChampsMinesView extends View implements  View.OnTouchListener
 	private boolean enMouvement;
 	private Vibrator vibor;
 	private String txtIndice;
+    private String txtRetour;
 
 
 
@@ -50,6 +52,7 @@ public class ChampsMinesView extends View implements  View.OnTouchListener
 		super(context);
 		setFocusable(true);
 		this.txtIndice = context.getString(app.enigmeStudio.R.string.indice_mine);
+        this.txtRetour = context.getString( R.string.Retour );
 
 		this.vibor = (Vibrator)context.getSystemService(Context.VIBRATOR_SERVICE);
 
@@ -96,7 +99,7 @@ public class ChampsMinesView extends View implements  View.OnTouchListener
         canva.drawColor(Color.BLACK);
 
         zoneBoutonRetour.set(20, 100, 150, 175);
-        MethodeDessiner.creerBtnRetour(canva, this.zoneBoutonRetour, "<");
+        MethodeDessiner.creerBtnRetour(canva, this.zoneBoutonRetour, this.txtRetour );
 
 
 		if(this.enMouvement)

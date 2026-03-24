@@ -8,8 +8,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.Locale;
-
 import app.enigmeStudio.Outils.Sauvegarde;
 import app.enigmeStudio.enigmeChampMine.ChampsDeMines;
 import app.enigmeStudio.enigmeMontre.EnigmeMontre;
@@ -36,15 +34,14 @@ public class EcranAccueil extends AppCompatActivity
     {
         super.onResume();
 
+        Configuration config = new Configuration();
+        config.setLocale( Sauvegarde.getLangue() );
+        getResources().updateConfiguration(config, getResources().getDisplayMetrics());
+        this.getApplicationContext().getResources().updateConfiguration(config, getResources().getDisplayMetrics());
+
         TextView txtSelection = (TextView) findViewById(R.id.textViewSelection);
         if (txtSelection != null)
             txtSelection.setText(R.string.selectionner_un_niveau);
-
-        Configuration config = new Configuration();
-        config.setLocale( Sauvegarde.getLangue() );
-
-        getResources().updateConfiguration(config, getResources().getDisplayMetrics());
-        this.getApplicationContext().getResources().updateConfiguration(config, getResources().getDisplayMetrics());
 
         new Sauvegarde().majTextView(this);
 

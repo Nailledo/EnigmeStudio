@@ -17,7 +17,7 @@ import app.enigmeStudio.R;
 public class DessinerMontre extends View implements View.OnTouchListener
 {
     private MethodeDessiner methodeDessiner;
-    private EnigmeMontre activite;
+    private EnigmeMontre    activite;
 
     private final Bitmap montre;
     private final Bitmap petiteAiguille;
@@ -58,7 +58,7 @@ public class DessinerMontre extends View implements View.OnTouchListener
     {
         super.onSizeChanged(w, h, oldw, oldh);
         this.pinceau         = new Paint(Paint.ANTI_ALIAS_FLAG);
-        this.methodeDessiner = new MethodeDessiner(this, this.pinceau);
+        this.methodeDessiner = new MethodeDessiner(this.pinceau);
 
         this.viewWidth  = w;
         this.viewHeight = h;

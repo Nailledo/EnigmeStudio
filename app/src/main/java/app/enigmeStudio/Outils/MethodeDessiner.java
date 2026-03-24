@@ -6,13 +6,11 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
 
-import app.enigmeStudio.enigmeMontre.DessinerMontre;
-
 public class MethodeDessiner
 {
     private final Paint  pinceau;
 
-    public MethodeDessiner(DessinerMontre vue, Paint pinceau)
+    public MethodeDessiner(Paint pinceau)
     {
         this.pinceau = pinceau;
     }
@@ -62,31 +60,6 @@ public class MethodeDessiner
     {
         Paint pinceau = new Paint(Paint.ANTI_ALIAS_FLAG);
 
-        pinceau.setStyle(Paint.Style.FILL);
-        pinceau.setColor(Color.DKGRAY);
-        canvas.drawRoundRect(zone, 20, 20, pinceau);
-
-        pinceau.setStyle(Paint.Style.STROKE);
-        pinceau.setStrokeWidth(3f);
-        pinceau.setColor(Color.GRAY);
-        canvas.drawRoundRect(zone, 20, 20, pinceau);
-
-        pinceau.setStyle(Paint.Style.FILL);
-        pinceau.setColor(Color.LTGRAY);
-        pinceau.setTextSize(36f);
-        pinceau.setFakeBoldText(true);
-        canvas.drawText(texte,
-                zone.centerX() - pinceau.measureText(texte) / 2f,
-                zone.centerY() + 13f,
-                pinceau);
-
-        pinceau.setStyle(Paint.Style.FILL);
-        pinceau.setStrokeWidth(0f);
-        pinceau.setFakeBoldText(true);
-    }
-
-    public static void creerBtnIndice(Canvas canvas, Paint pinceau, RectF zone, String texte)
-    {
         pinceau.setStyle(Paint.Style.FILL);
         pinceau.setColor(Color.DKGRAY);
         canvas.drawRoundRect(zone, 20, 20, pinceau);
